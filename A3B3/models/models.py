@@ -18,7 +18,7 @@ class Cliente(Base):
     compra = relationship("Compra",backref='Cliente', lazy=True)
 
     def __repr__(self):
-        return f'Cliente {self.nome}'
+        return f'Cliente {self.cliente}'
 
 
 class Cadastro(Base):
@@ -34,7 +34,7 @@ class Cadastro(Base):
     cliente = relationship("Cliente", backref="Cadastro")
 
     def __repr__(self):
-        return f'Cadastro {self.nome}'
+        return f'Cadastro {self.cadastro}'
 
 class Editora(Base):
     __tablename__ = 'editora'
@@ -48,7 +48,7 @@ class Editora(Base):
     livro = relationship("Livro",backref='Editora', lazy=True)
 
     def __repr__(self):
-        return f'Editora {self.nome}'
+        return f'Editora {self.editora}'
 
 class Livro(Base):
     __tablename__ = 'livro'
@@ -66,7 +66,7 @@ class Livro(Base):
     editora = relationship("Editora", backref="Livro")
 
     def __repr__(self):
-        return f'Livro {self.comentario}'
+        return f'Livro {self.livro}'
 
 class Compra(Base):
     __tablename__ = 'compra'
@@ -80,4 +80,4 @@ class Compra(Base):
     livro = relationship("Livro", backref="Compra")
 
     def __repr__(self):
-        return f'Compra {self.nome}'
+        return f'Compra {self.compra}'

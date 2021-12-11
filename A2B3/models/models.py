@@ -18,7 +18,7 @@ class Usuario(Base):
     curtida = relationship("Curtida",backref='Usuario', lazy=True)
 
     def __repr__(self):
-        return f'Usuario {self.nome}'
+        return f'Usuario {self.usuario}'
 
     @classmethod
     def find_by_email(cls, session, email):
@@ -40,7 +40,7 @@ class Atividade(Base):
     usuario = relationship("Usuario", backref="Atividade")
 
     def __repr__(self):
-        return f'Atividade {self.nome}'
+        return f'Atividade {self.atividade}'
 
 class Comentario(Base):
     __tablename__ = 'comentario'
@@ -69,4 +69,4 @@ class Curtida(Base):
     comentario = relationship("Comentario", backref="Curtida")
 
     def __repr__(self):
-        return f'Atividade {self.nome}'
+        return f'Atividade {self.curtida}'

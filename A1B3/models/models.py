@@ -15,7 +15,7 @@ class Usuario(Base):
 
     
     def __repr__(self):
-        return f'Usuario {self.nome}'
+        return f'Usuario {self.usuario}'
 
     @classmethod
     def find_by_email(cls, session, email):
@@ -32,7 +32,7 @@ class Atividade(Base):
     local = Column(String(255), nullable=False)
 
     def __repr__(self):
-        return f'Atividade {self.nome}'
+        return f'Atividade {self.atividade}'
 
 class Comentario(Base):
     __tablename__ = 'comentario'
@@ -48,4 +48,4 @@ class Curtida(Base):
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
 
     def __repr__(self):
-        return f'Atividade {self.nome}'
+        return f'Atividade {self.curtida}'

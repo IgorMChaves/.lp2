@@ -2,7 +2,7 @@ from sqlalchemy import *
 from models.models import Cliente, Cadastro, Compra, Editora, Livro
 
 
-engine = create_engine("mysql+pymysql://root:@localhost/A2B3", echo=True)
+engine = create_engine("mysql+pymysql://root:@localhost/A3B3", echo=True)
 
 cliente = Cliente.__table__
 cliente.create(engine, checkfirst=True)

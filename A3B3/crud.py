@@ -5,7 +5,7 @@ from A3B3.models.models import Cadastro, Cliente, Compra, Editora, Livro
 
 from models.models import Atividade, Comentario, Usuario
 
-engine = create_engine("mysql+pymysql://root:@localhost/A2B3", echo=True)
+engine = create_engine("mysql+pymysql://root:@localhost/A3B3", echo=True)
 
 Session = sessionmaker(bind=engine)
 session = Session()
