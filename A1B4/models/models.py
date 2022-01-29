@@ -12,7 +12,6 @@ class Artista(Base):
     id = Column(Integer, Sequence('artista_id_seq'), primary_key=True)
     nome = Column(String(255), unique=True, nullable=False)
     sobrenome = Column(String(45), nullable=False)
-    registro = Column(int(255), nullable=False)
 
     cadastro_artista = relationship("Cadastro_Artista",backref='Artista', lazy=True)
     musica = relationship("Musica",backref='Artista', lazy=True)
@@ -31,7 +30,7 @@ class Cadastro_Artista(Base):
     artista = relationship("Artista", backref="Cadastro_Artista")
 
     def __repr__(self):
-        return f'Cadastro {self.cadastro}'
+        return f'Cadastro_Artista {self.cadastro_artista}'
 
 
 class Musica(Base):
